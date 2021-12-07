@@ -44,6 +44,73 @@
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
 ------------
+#### **Testing**
+
+------------
+
+Your shell should work like this in interactive mode:
+
+$ ./hsh
+($) /bin/ls
+hsh main.c shell.c
+($)
+($) exit
+$
+
+But also in non-interactive mode:
+
+$ echo "/bin/ls" | ./hsh
+hsh main.c shell.c test_ls_2
+$
+$ cat test_ls_2
+/bin/ls
+/bin/ls
+$
+$ cat test_ls_2 | ./hsh
+hsh main.c shell.c test_ls_2
+hsh main.c shell.c test_ls_2
+$
+
+------------
+
+How to use it?
+------------
+##### **First step:**
+###### Clone the shell repository:
+------------
+[HTTPS] https://github.com/Mcfreestyle/simple_shell.git
+[SSH] git@github.com:Mcfreestyle/simple_shell.git
+
+------------
+##### **Second step:** 
+Run all * .c files from the repository like this :
+
+------------
+	 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+
+------------
+##### **Third step:** 
+###### Run the SHELL (executable file) and enjoy!
+------------
+	 ./hsh
+
+------------
+### List of useful commands
+------------
+- ls - will list all files and directories in current working directory.
+- pwd - given you the current working directory.
+
+------------
+### Builtins
+------------
+There are two builtins programmed into the shell. Below is a description and use for each builtin.
+
+- env - The env command is a command that tells the shell program to display all of the environment variables with their values. It is a way to access those values through the shell.
+
+- exit - If you wish to exit out of the shell the user can use the builtin exit.
+
+------------
 #### **Authors**
-Michael Chambilla - [Github](https://github.com/Mcfreestyle "Github") 
+Michael Chambilla - [Github](https://github.com/Mcfreestyle "Github")
+
 Jeshua Cabanillas - [Github](https://github.com/josh-94 "Github") - [Twitter](https://twitter.com/Jeshua_CabanBla "Twitter")
