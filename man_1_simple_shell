@@ -1,0 +1,56 @@
+SIMPLE SHELL(1)					Manpage
+
+NAME
+	simple shell - simple UNIX command interpreter
+
+SYNOPSIS
+	The simple shell gets started when the user logs in or start the terminal.
+
+DESCRIPTION
+	A shell is special user program which provide an interface to user to use operating system services.
+
+	It is a command language interpreter that execute commands read from input devices such as keyboards or 	from files.
+	
+	Shell can be accessed by user using a command line interface. A special program called Terminal in linux
+	is provided to type in the human readable commands such as env, ls etc. and then it is being execute.
+
+	./hsh
+	/bin/[command] [option]
+	[command] [option]
+
+EXAMPLE
+	$  /bin/ls -l
+	  -rw-r--r-- 1 root root     510 Aug 17 19:39 path.c
+	  -rwxr-xr-x 1 root root   17264 Aug 17 13:37 shell
+	  -rw-r--r-- 1 root root    1526 Aug 17 16:45 shell.c
+	  -rw-r--r-- 1 root root     615 Aug 18 11:37 main.h
+	  -rw-r--r-- 1 root root     728 Aug 14 18:50 match.c
+
+	$  ls -l
+	  -rw-r--r-- 1 root root     510 Aug 17 19:39 path.c
+	  -rwxr-xr-x 1 root root   17264 Aug 17 13:37 shell
+	  -rw-r--r-- 1 root root    1526 Aug 17 16:45 shell.c
+	  -rw-r--r-- 1 root root     615 Aug 18 11:37 main.h
+	  -rw-r--r-- 1 root root     728 Aug 14 18:50 match.c
+
+	$ /bin/pwd
+	  /root/simple_shell
+
+	$ hhhhh
+	  ./shell: No such file or directory
+
+BUILTIN COMMANDS
+
+	$ env
+	- list the current environment variables
+
+	$ exit
+	- exit the shell
+	
+AUTHOR
+	Written by Jeshua Cabanillas.
+	
+SEE ALSO
+
+	access(2), execve(2), _exit(2), exit(3), fork(2), free(3), isatty(3), malloc(3), signal(2), wait(2), 		write(2).
+						December 2021
