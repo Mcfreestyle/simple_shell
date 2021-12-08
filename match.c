@@ -7,7 +7,7 @@
 void my_exit(char *argv[])
 {
 	free_argv(argv);
-	exit(1);
+	exit(EXIT_SUCCESS);
 }
 
 /**
