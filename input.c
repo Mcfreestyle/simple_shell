@@ -14,7 +14,6 @@ void get_input(char *argv[])
 	input = getline(&buff, &sizbuff, stdin);
 	if (input == EOF)
 	{
-		write(1, "\n",1);
 		free(buff);
 		exit(EXIT_SUCCESS);
 	}
