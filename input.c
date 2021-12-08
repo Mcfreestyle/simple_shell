@@ -8,14 +8,14 @@ void get_input(char *argv[])
 {
 	char *buff = NULL;
 	char *token;
-	size_t sizbuff = 100;
+	size_t sizbuff = 0;
 	int i, input;
 
 	input = getline(&buff, &sizbuff, stdin);
 	if (input == EOF)
 	{
 		free(buff);
-		exit(1);
+		exit(EXIT_SUCCESS);
 	}
 	token = strtok(buff, " ");
 	for (i = 0; token != NULL; i++)
