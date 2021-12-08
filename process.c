@@ -15,7 +15,6 @@ void create_process(char *argv[])
 		if (execve(argv[0], argv, NULL) == -1)
 		{
 			perror("Error:");
-			kill(pid, 
 			_exit(1);
 		}
 	}
