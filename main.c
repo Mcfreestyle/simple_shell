@@ -11,10 +11,10 @@ void handler_error(char *argv[], char **av)
 
 	len1 = _strlen(av[0]);
 	len2 = _strlen(argv[0]);
-	write(1, av[0], len1);
-	write(1, ": ", 2);
-	write(1, argv[0], len2);
-	write(1, ": not found\n", 12);
+	write(2, av[0], len1);
+	write(2, ": 1: ", 5);
+	write(2, argv[0], len2);
+	write(2, ": not found\n", 12);
 }
 
 /**
