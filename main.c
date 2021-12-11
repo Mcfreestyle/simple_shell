@@ -39,6 +39,28 @@ void handler(__attribute__((unused)) int sig)
 }
 
 /**
+ * exist_path - verify if PATH exists
+ * @argv: contains the input and its flags
+ * @av: contains the values of the arguments of main
+ *
+ * Return: 1 if the PATH exists, otherwise 0
+ */
+int exist_path(char *argv[], char **av)
+{
+	char *path;
+
+	path = _getenv("PATH");
+	if (path == NULL)
+	{
+		handler_error(argv, av);
+		free_argv(argv);
+		return (0);
+	}
+	free(path);
+	return (1);
+}
+
+/**
  * main - simulate a shell
  * @ac: number of arguments
  * @av: contains the values of arguments
@@ -53,7 +75,6 @@ int main(__attribute__((unused)) int ac, char **av)
 
 	if (isatty(STDIN_FILENO) != 1)
 		inte = 0;
-
 	signal(SIGINT, handler);
 	while (1)
 	{
@@ -72,6 +93,8 @@ int main(__attribute__((unused)) int ac, char **av)
 			free_argv(argv);
 			continue;
 		}
+		if (exist_path(argv, av) == 0)
+			continue;
 		if (stat(argv[0], &st) != 0)
 		{
 			if (search_path(argv) == 0)
@@ -81,7 +104,6 @@ int main(__attribute__((unused)) int ac, char **av)
 				continue;
 			}
 		}
-
 		create_process(argv);
 		free_argv(argv);
 	}
